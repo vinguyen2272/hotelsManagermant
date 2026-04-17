@@ -6,7 +6,7 @@ import Homepage from './pages/Homepage'
 import Detail from './pages/Detail'
 import Footer from './components/Footer'
 
-export const backendUrl = 'http://localhost:4000'
+export const backendUrl = import.meta.env.VITE_BACKEND_URL
 function App() {
 
 
