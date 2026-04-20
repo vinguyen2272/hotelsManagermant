@@ -7,7 +7,7 @@ import ListHotel from './pages/ListHotel'
 import Reservation from './pages/Reservation'
 
 
-export const backendUrl = 'http://localhost:4000'
+export const backendUrl = import.meta.env.VITE_BACKEND_URL
 const App = () => {
 
   const [token, setToken] = useState(localStorage.getItem('token'))

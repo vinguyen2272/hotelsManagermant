@@ -18,9 +18,9 @@ app.use(express.json())
 // CORS (chuẩn dev + production)
 app.use(cors({
     origin: [
-        'http://localhost:5173', // user local
-        'http://localhost:5174', // admin local
-        'https://hotel-user.vercel.app',
+        'http://localhost:5173',
+        'http://localhost:5174',
+        'https://hotels-managermant-2soj.vercel.app',
         'https://hotel-admin.vercel.app'
     ],
     credentials: true
