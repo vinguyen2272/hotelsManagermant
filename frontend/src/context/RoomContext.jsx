@@ -2,7 +2,7 @@
 import { createContext, useEffect, useState } from 'react'
 import { roomData } from '../assets/asset'
 import axios from "axios"
-import { backendUrl } from '../../../admin/src/App'
+import { backendUrl } from '../App'
 
 export const RoomContext = createContext()
 
