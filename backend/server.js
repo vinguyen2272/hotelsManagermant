@@ -21,7 +21,7 @@ app.use(cors({
         'http://localhost:5173',
         'http://localhost:5174',
         'https://hotels-managermant-2soj.vercel.app',
-        'https://hotel-admin.vercel.app'
+        'https://hotels-managermant-three.vercel.app'
     ],
     credentials: true
 }))
