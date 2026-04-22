@@ -10,23 +10,24 @@ const RoomContextProvider = ({ children }) => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
-    const fetchApi = async (retry = 3) => {
+    const fetchApi = async (retry = 5) => {
         try {
             const res = await axios.get(`${backendUrl}/api/hotel/list`)
 
             if (res.data.success) {
                 setRooms(res.data.hotels)
+                setLoading(false)
             } else {
-                setError("API trả về không thành công")
+                throw new Error("API failed")
             }
 
-            setLoading(false)
         } catch (err) {
+            console.log("Retry:", retry)
+
             if (retry > 0) {
-                setTimeout(() => fetchApi(retry - 1), 1500)
+                setTimeout(() => fetchApi(retry - 1), 2000)
             } else {
-                console.log(err)
-                setError("Không thể tải dữ liệu")
+                setError("Server đang sleep hoặc lỗi")
                 setLoading(false)
             }
         }
